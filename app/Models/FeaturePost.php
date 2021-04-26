@@ -10,4 +10,6 @@ class FeaturePost extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    protected $table = 'feature_post';
 }

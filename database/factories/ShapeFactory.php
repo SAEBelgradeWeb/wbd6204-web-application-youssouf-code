@@ -22,8 +22,8 @@ class ShapeFactory extends Factory
     public function definition()
     {
         return [
-            'shape' => $this->faker->randomElement(['Micro', 'Convertible', 'Pick Up Truck', 'Sedan',
-                'Hatchback', 'MPV', 'SUV', 'Coupe', 'VAN', 'Passenger VAN', 'BUS', 'Roadster',]),
+            'shape' => $this->faker->randomElement(['super_car', 'Convertible', 'Pick Up Truck', 'Sedan',
+                'Hatchback', 'SUV', 'Coupe', 'VAN', 'Passenger VAN', 'Roadster',]),
 
         ];
     }

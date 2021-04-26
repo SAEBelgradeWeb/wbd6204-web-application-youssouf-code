@@ -21,9 +21,6 @@ class VehicleFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'vehicle' => $this->faker->randomElement(['Car', 'Motorbike', 'Track']),
 
-        ];
     }
 }

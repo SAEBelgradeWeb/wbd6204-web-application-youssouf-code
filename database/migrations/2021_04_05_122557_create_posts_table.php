@@ -28,6 +28,14 @@ class CreatePostsTable extends Migration
             $table->foreign('make_id')->references('id')
                 ->on('makes')->onDelete('cascade');
 
+            $table->foreignId('type_id');
+            $table->foreign('type_id')->references('id')
+                ->on('types')->onDelete('cascade');
+
+            $table->foreignId('shape_id');
+            $table->foreign('shape_id')->references('id')
+                ->on('shapes')->onDelete('cascade');
+
             $table->foreignId('fuel_id');
             $table->foreign('fuel_id')->references('id')
                 ->on('fuels')->onDelete('cascade');
@@ -40,13 +48,13 @@ class CreatePostsTable extends Migration
             $table->foreign('transmission_id')->references('id')
                 ->on('transmissions')->onDelete('cascade');
 
-            $table->foreignId('feature_id')->unsigned()->nullable();
+            $table->foreignId('feature_id')->nullable();
             $table->foreign('feature_id')->references('id')
                 ->on('features')->onDelete('cascade');
 
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->integer('power')->nullable();
+            $table->bigInteger('power')->nullable();
             $table->integer('price')->nullable();
             $table->integer('year')->nullable();
             $table->bigInteger('mileage')->nullable();

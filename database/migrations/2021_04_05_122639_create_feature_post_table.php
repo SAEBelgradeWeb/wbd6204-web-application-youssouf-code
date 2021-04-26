@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeaturePostsTable extends Migration
+class CreateFeaturePostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFeaturePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('feature_posts', function (Blueprint $table) {
+        Schema::create('feature_post', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('post_id');
@@ -34,6 +34,6 @@ class CreateFeaturePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feature_posts');
+        Schema::dropIfExists('feature_post');
     }
 }

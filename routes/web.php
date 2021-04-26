@@ -13,10 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+
+});*/
+/*Route::get('/', function () {
+    return view('first');
+});*/
+
+
+
+
+Route::get('/secondFilter', [\App\Http\Controllers\PostController::class, 'indexFiltering']);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/',[\App\Http\Controllers\PostController::class, 'index']);
+
+Route::get('/filterPosts/{id}',[\App\Http\Controllers\PostController::class, 'indexVehicles']);
+
+Route::get('/post/{id}',[\App\Http\Controllers\PostController::class, 'show_single'] );

@@ -15,4 +15,8 @@ class Shape extends Model
     {
         return $this->belongsToMany(Type::class);
     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

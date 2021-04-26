@@ -18,8 +18,11 @@ class Type extends Model
 
     public function shapes()
     {
-        return $this->belongsToMany(Type::class);
+        return $this->belongsToMany(Shape::class);
     }
-
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
 }

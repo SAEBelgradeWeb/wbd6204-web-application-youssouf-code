@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Vehicle;
 use Illuminate\Database\Seeder;
 
 class VehicleSeeder extends Seeder
@@ -13,6 +14,8 @@ class VehicleSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Vehicle::factory(10)->create();
+        Vehicle::create(['vehicle'=> 'car']);
+        Vehicle::create(['vehicle'=> 'truck']);
+        Vehicle::create(['vehicle'=> 'motorbike']);
     }
 }

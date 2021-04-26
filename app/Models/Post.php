@@ -25,6 +25,15 @@ class Post extends Model
     {
         return $this->belongsTo(Make::class);
     }
+    /*test*/
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+    public function shape()
+    {
+        return $this->belongsTo(Shape::class);
+    }
     public function fuel()
     {
         return $this->belongsTo(Fuel::class);

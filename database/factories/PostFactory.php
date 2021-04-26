@@ -23,13 +23,15 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1, 10),
-            'vehicle_id' => $this->faker->numberBetween(1, 10),
+            'vehicle_id' => $this->faker->numberBetween(1, 3),
             'make_id' => $this->faker->numberBetween(1, 10),
+            'type_id' => $this->faker->numberBetween(1, 10),
+            'shape_id' => $this->faker->numberBetween(1, 10),
             'fuel_id' => $this->faker->numberBetween(1, 10),
             'region_id' => $this->faker->numberBetween(1, 10),
             'transmission_id' => $this->faker->numberBetween(1, 10),
             'title' => $this->faker->sentence(3, true),
-            'description' => $this->faker->paragraph(5, true),
+            'description' => $this->faker->paragraph(3, true),
             'power' => $this->faker->numberBetween(1, 2000),
             'price' => $this->faker->numberBetween(1, 2000000),
             'year' => $this->faker->year($max = 'now'),

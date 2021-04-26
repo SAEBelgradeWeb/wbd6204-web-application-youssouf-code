@@ -24,11 +24,13 @@ class FeatureFactory extends Factory
         return [
             'feature' => $this->faker->randomElement(['A/C: Front', 'A/C: Rear', 'Backup Camera',
                 'Cruise Control', 'A/C: Front', 'A/C: Rear', 'Backup Camera', 'Cruise Control',
-                'Power Steering', 'Hands-Free', 'Heated Seats', 'Keyless Entry',
+                'Power Steering', 'Hands-Free', 'Heated Seats', 'Keyless-Entry',
                 'Sunroof', 'Airbag: Driver', 'Airbag: Passenger', 'Fog Lights', 'Third Row Seats',
-                'Navigation']),
+                'Navigation'])
 
-           // 'post_id' => $this->faker->numberBetween(1, 10),
+//            randomElements($array = array ('a','b','c'), $count = 1) // array('c')
+
+
 
         ];
     }
