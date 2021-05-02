@@ -35,23 +35,23 @@ THIS IS THE DASHBOARD
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-1"> {{--START OF THE LEFT SIDE--}}
+    <div class="row justify-content-center">
+        <div {{--class="col-md-1"--}}>
             <h3>Edit your ad's</h3>
-            <div class="btn-group-vertical">
-                <a href="#" class="btn btn-success btn-lg" role="button"><i class="fas fa-plus-square"></i></a>
+            <div class="btn-group{{---vertical--}}">
+                <a href="/home/form" class="btn btn-success btn-lg" role="button"><i class="fas fa-plus-square"></i></a>
                 <br>
                 <a href="#" class="btn btn-warning btn-lg" role="button"><i class="fas fa-pencil-alt"></i></a>
                 <br>
                 <a href="#" class="btn btn-danger btn-lg" role="button"><i class="fas fa-trash-alt"></i></a>
             </div>
-        </div>{{--END OF THE LEFT SIDE--}}
+        </div>
 
 
-        <div class="col-md-11 bg-info"> {{--START OF THE RIGHT SIDE--}}
-            @include('partials.ad_form') {{--THIS IS TO CALL THE FORM TO ADD NEW POST--}}
+       {{-- <div class="col-md-11 bg-info">
+            @include('partials.ad_form')
 
-        </div>  {{--END OF THE RIGHT SIDE--}}
+        </div>--}}
     </div>
 
 </div>

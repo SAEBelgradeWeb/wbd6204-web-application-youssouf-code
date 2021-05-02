@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,8 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 
 });*/
-/*Route::get('/', function () {
-    return view('first');
+/*Route::get('/home/form', function () {
+    return view('form');
 });*/
 
 
@@ -37,3 +38,7 @@ Route::get('/',[\App\Http\Controllers\PostController::class, 'index']);
 Route::get('/filterPosts/{id}',[\App\Http\Controllers\PostController::class, 'indexVehicles']);
 
 Route::get('/post/{id}',[\App\Http\Controllers\PostController::class, 'show_single'] );
+
+Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create']);
+
+Route::post('/', [\App\Http\Controllers\PostController::class, 'store']);

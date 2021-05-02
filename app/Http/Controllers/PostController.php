@@ -26,7 +26,7 @@ class PostController extends Controller
     public function show_cars()
     {
         $Vehicles = Vehicle::all();
-        $posts = Post::wher(v);
+        $posts = Post::where(v);
         return view('cars', compact('posts', ));
     }*/
 
@@ -45,7 +45,6 @@ class PostController extends Controller
 
 
         $make = Make::where('make', 'jeep')->first();
-//        $condition = Condition::where('condition', 'used')->first;
         $posts = Post::where('make_id', $make->id)->get();
 
         dd($posts);
@@ -55,4 +54,19 @@ class PostController extends Controller
 
         return view('posts',compact('posts'));
     }
+
+    public function create()
+    {
+        $vehicles = Vehicle::all();
+        /*dd($vehicles);*/
+        return view('form', compact('vehicles'));
+    }
+
+    public function store(Request $request)
+    {
+        Post::create($request->all());
+/*        dd($request->all());*/
+    }
 }
+
+/*['model']=>$request->type*/

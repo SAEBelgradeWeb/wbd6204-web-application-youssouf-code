@@ -33,5 +33,14 @@ It's an online VEHICLES market place in a form of web application.
 
 - clone the repository 
 <pre>
-git clone 
+- git clone
+</pre>
+- copy file (.env.example) to (.env)
+    - open (.env).
+    - change the database name to a name from your choice.
+    - create a database with that name.  
+<pre>
+composer install
+php artisan key:generate
+npm install 
 </pre>

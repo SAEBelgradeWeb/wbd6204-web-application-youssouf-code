@@ -20,31 +20,31 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
 
-            $table->foreignId('vehicle_id');
+            $table->foreignId('vehicle_id')->nullable();
             $table->foreign('vehicle_id')->references('id')
                 ->on('vehicles')->onDelete('cascade');
 
-            $table->foreignId('make_id');
+            $table->foreignId('make_id')->nullable();
             $table->foreign('make_id')->references('id')
                 ->on('makes')->onDelete('cascade');
 
-            $table->foreignId('type_id');
+            $table->foreignId('type_id')->nullable();
             $table->foreign('type_id')->references('id')
                 ->on('types')->onDelete('cascade');
 
-            $table->foreignId('shape_id');
+            $table->foreignId('shape_id')->nullable();
             $table->foreign('shape_id')->references('id')
                 ->on('shapes')->onDelete('cascade');
 
-            $table->foreignId('fuel_id');
+            $table->foreignId('fuel_id')->nullable();
             $table->foreign('fuel_id')->references('id')
                 ->on('fuels')->onDelete('cascade');
 
-            $table->foreignId('region_id');
+            $table->foreignId('region_id')->nullable();
             $table->foreign('region_id')->references('id')
                 ->on('regions')->onDelete('cascade');
 
-            $table->foreignId('transmission_id');
+            $table->foreignId('transmission_id')->nullable();
             $table->foreign('transmission_id')->references('id')
                 ->on('transmissions')->onDelete('cascade');
 
@@ -52,16 +52,16 @@ class CreatePostsTable extends Migration
             $table->foreign('feature_id')->references('id')
                 ->on('features')->onDelete('cascade');
 
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->bigInteger('power')->nullable();
             $table->integer('price')->nullable();
             $table->integer('year')->nullable();
             $table->bigInteger('mileage')->nullable();
 
-            $table->enum('drive_type', ['AWD', 'FWD','RWD', '4WD'])->default('FWD');
-            $table->enum('condition', ['new', 'used','like new'])->default('used');
-            $table->enum('door', ['2', '3','5'])->default('5');
+            $table->enum('drive_type', ['AWD', 'FWD','RWD', '4WD'])->default('FWD')->nullable();
+            $table->enum('condition', ['new', 'used','like new'])->default('used')->nullable();
+            $table->enum('door', ['2', '3','5'])->default('5')->nullable();
             //$table->integer('door');
 
             $table->timestamps();
