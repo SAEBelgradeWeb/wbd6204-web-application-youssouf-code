@@ -4,10 +4,11 @@
         <img src="https://dummyimage.com/300.png/09f/fff" width="30" height="30" class="d-inline-block align-top" alt="">
         Dream Car
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler ml-auto p-2" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    {{--<div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
+
+{{--    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
         <ul class="navbar-nav mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Car <span class="sr-only">(current)</span></a>
@@ -34,6 +35,7 @@
                 @endauth
             </div>
         @endif
+
     </div>
 </nav>
 {{--THE END OF THEEEEE NAV--}}

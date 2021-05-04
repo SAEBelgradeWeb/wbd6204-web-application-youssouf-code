@@ -22,11 +22,11 @@ class FeatureFactory extends Factory
     public function definition()
     {
         return [
-            'feature' => $this->faker->randomElement(['A/C: Front', 'A/C: Rear', 'Backup Camera',
+            /*'feature' => $this->faker->randomElement(['A/C: Front', 'A/C: Rear', 'Backup Camera',
                 'Cruise Control', 'A/C: Front', 'A/C: Rear', 'Backup Camera', 'Cruise Control',
                 'Power Steering', 'Hands-Free', 'Heated Seats', 'Keyless-Entry',
                 'Sunroof', 'Airbag: Driver', 'Airbag: Passenger', 'Fog Lights', 'Third Row Seats',
-                'Navigation'])
+                'Navigation'])*/
 
 //            randomElements($array = array ('a','b','c'), $count = 1) // array('c')
 

@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
 
@@ -58,10 +58,12 @@ class CreatePostsTable extends Migration
             $table->integer('price')->nullable();
             $table->integer('year')->nullable();
             $table->bigInteger('mileage')->nullable();
+            $table->enum('fuel', ['Diesel', 'Electric', 'Ethanol', 'Gasoline', 'hybrid', 'Lpg autogas'])->default('Ethanol')->nullable();
+            $table->enum('transmission', ['Automatic', 'Manual', 'Semi-automatic', 'CVT'])->default('Manual')->nullable();
 
             $table->enum('drive_type', ['AWD', 'FWD','RWD', '4WD'])->default('FWD')->nullable();
             $table->enum('condition', ['new', 'used','like new'])->default('used')->nullable();
-            $table->enum('door', ['2', '3','5'])->default('5')->nullable();
+            $table->enum('door', ['2', '3','5','7'])->default('5')->nullable();
             //$table->integer('door');
 
             $table->timestamps();

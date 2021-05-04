@@ -28,8 +28,10 @@
                     <li class="list-group-item"><i class="fas fa-hand-holding-usd mr-2"> Price:</i> 6666 $</li>
                 </ul>
                 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                <a href="#" class="btn btn-danger btn-sm active  btn-block " role="button" aria-pressed="true">Link</a>
+
             </div>
+
+
         </div>
     </div>
 

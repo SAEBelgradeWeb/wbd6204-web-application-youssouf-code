@@ -26,7 +26,6 @@ class MakeFactory extends Factory
                 'Porsche', 'BMW', 'Honda', 'Ford', 'Nissan', 'Lexus', 'Mini', 'McLaren', 'Subaru',
                 'Volvo', 'Tesla', 'Skoda', 'LandRover', 'Ferrari', 'Dodge', 'GMC', 'Fiat',
                 'Porsche', 'Maserati', 'Lamborghini', 'Jaguar', 'Nissan', 'Jeep']),
-
         ];
     }
 }

@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 
 });*/
-/*Route::get('/home/form', function () {
-    return view('form');
-});*/
+Route::get('/try', function () {
+    return view('posts_auth');
+});
 
 
 
@@ -31,6 +31,7 @@ Route::get('/secondFilter', [\App\Http\Controllers\PostController::class, 'index
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/',[\App\Http\Controllers\PostController::class, 'index']);
@@ -39,6 +40,6 @@ Route::get('/filterPosts/{id}',[\App\Http\Controllers\PostController::class, 'in
 
 Route::get('/post/{id}',[\App\Http\Controllers\PostController::class, 'show_single'] );
 
-Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create']);
+Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create'])->middleware('auth');;
 
 Route::post('/', [\App\Http\Controllers\PostController::class, 'store']);

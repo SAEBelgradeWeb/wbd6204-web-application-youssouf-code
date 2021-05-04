@@ -22,8 +22,8 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->randomElement(['A1', 'A2', 'A4', 'A7',
-                'X1', 'X2', 'X3', 'X4', 'X5', 'Golf 5', 'Golf 6', 'Golf 7',]),
+            /*'type' => $this->faker->randomElement(['A1', 'A2', 'A4', 'A7',
+                'X1', 'X2', 'X3', 'X4', 'X5', 'Golf 5', 'Golf 6', 'Golf 7',]),*/
 
             'make_id' => $this->faker->numberBetween(1, 10)
 

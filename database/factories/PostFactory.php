@@ -24,7 +24,7 @@ class PostFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 10),
             'vehicle_id' => $this->faker->numberBetween(1, 3),
-            'make_id' => $this->faker->numberBetween(1, 10),
+            'make_id' => $this->faker->numberBetween(1, 5),
             'type_id' => $this->faker->numberBetween(1, 10),
             'shape_id' => $this->faker->numberBetween(1, 10),
             'fuel_id' => $this->faker->numberBetween(1, 10),
