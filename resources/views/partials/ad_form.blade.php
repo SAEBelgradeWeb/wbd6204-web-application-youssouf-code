@@ -2,11 +2,12 @@
 
 <form class="px-4" action="/" method="post">
     @csrf
-    <h4>Your Name:{{$user->name}} {{$user->last_name}}</h4>
+    {{--<h4>Your Name:{{$user->name}} {{$user->last_name}}</h4>
     <div class="row">
         <label class="bg-danger" for="user_id">Your ID:{{$user->id}}</label>
         <input type="text" class="form-control" id="user_id" name="user_id" placeholder="please type ur ID here">
-    </div>
+    </div>--}}
+    <input type="hidden" name="user_id" value="{{$user->id}}"> {{--invisible field --}}
 
     <h1>Build Your Ad</h1>
     <div class="row">

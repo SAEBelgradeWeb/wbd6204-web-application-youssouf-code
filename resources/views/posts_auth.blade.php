@@ -23,7 +23,8 @@
                         <a href="#" class="btn btn-warning btn-lg " role="button"><i class="fas fa-pencil-alt"></i></a>
 
                         <br>
-                        <a href="#" class="btn btn-danger btn-lg " role="button"><i class="fas fa-trash-alt"></i></a>
+                        <a href="/home/posts/{{$post->id}}" class="btn btn-danger btn-lg" {{--role="button"--}}><i class="fas fa-trash-alt"></i></a>
+
                     </div>
                 </div>
             @endforeach

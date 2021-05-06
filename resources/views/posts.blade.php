@@ -62,6 +62,7 @@ IN CASE IF I MAKE A LEFT SEARCH BAR (WITH THE LEFT SEARCH BAR(TO BE MADE))
                     </ul>
 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
                     <a href="/post/{{$post->id}}" class="btn btn-secondary btn-sm active  btn-block " role="button" aria-pressed="true">Show</a>
+
                 </div>
             </div>
         @endforeach

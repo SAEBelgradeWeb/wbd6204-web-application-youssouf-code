@@ -103,12 +103,19 @@ class PostController extends Controller
        /* $user = User::find($id)->first();
         $posts = $user->posts;*/
 
-
         $posts = Auth::user()->posts()->orderBy('created_at','desc')->get();
 
 
         /*        $posts = Post::all();*/
         return view('posts_auth', compact('posts'));
+    }
+
+    public function delete($id)
+    {
+
+
+        Post::destroy($id);
+        return redirect('/home/posts');
     }
 
 }
