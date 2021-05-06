@@ -40,6 +40,8 @@ Route::get('/filterPosts/{id}',[\App\Http\Controllers\PostController::class, 'in
 
 Route::get('/post/{id}',[\App\Http\Controllers\PostController::class, 'show_single'] );
 
-Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create'])->middleware('auth');;
+Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create']);
 
 Route::post('/', [\App\Http\Controllers\PostController::class, 'store']);
+
+Route::get('/home/posts', [App\Http\Controllers\PostController::class, 'index_auth'])->name('home')/*->middleware('auth')*/;

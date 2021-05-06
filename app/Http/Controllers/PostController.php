@@ -7,10 +7,12 @@ use App\Models\Post;
 use App\Models\Region;
 use App\Models\Shape;
 use App\Models\Type;
+use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\Make;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -64,6 +66,8 @@ class PostController extends Controller
 
     public function create()
     {
+        $user = Auth::user();
+        $user_id = Auth::id();
         $makes = Make::all();
         $types = Type::all();
         $shapes = Shape::all();
@@ -79,17 +83,34 @@ class PostController extends Controller
 
         return view('form', compact('vehicles', 'drive_types',
             'conditions', 'doors', 'fuels','features','transmissions', 'makes',
-            'shapes', 'types', 'regions'));
+            'shapes', 'types', 'regions', 'user', 'user_id'));
+
+
     }
+
     public function store(Request $request)
     {
 /*        dd($request->all());*/
 
+
         $post = Post::create($request->except(['features']));
-        $post->features()->sync($request->feature);
+        $post->features()->sync($request->feature,);
 
         return redirect('/');
     }
+    public function index_auth()
+    {
+       /* $user = User::find($id)->first();
+        $posts = $user->posts;*/
+
+
+        $posts = Auth::user()->posts()->orderBy('created_at','desc')->get();
+
+
+        /*        $posts = Post::all();*/
+        return view('posts_auth', compact('posts'));
+    }
+
 }
 
 /*['model']=>$request->type*/

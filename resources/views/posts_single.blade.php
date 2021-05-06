@@ -70,8 +70,8 @@
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-center">USER CREDENTIALS</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><i class="fas fa-user-tie mr-2"> User Name:</i><b>{{--{{$post->user->name}} {{$post->user->last_name}}--}}</b></li>
-                            <li class="list-group-item"><i class="fas fa-phone-square-alt mr-2"> Phone Number:</i>{{--{{$post->user->phone_number}}--}}</li>
+                            <li class="list-group-item"><i class="fas fa-user-tie mr-2"> User Name:</i><b>{{$post->user->name}} {{$post->user->last_name}}</b></li>
+                            <li class="list-group-item"><i class="fas fa-phone-square-alt mr-2"> Phone Number:</i>{{$post->user->phone_number}}</li>
                         </ul>
                     </div>
                 </div>

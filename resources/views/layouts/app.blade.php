@@ -38,7 +38,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <!-- colored part -->
+                       {{-- <div class="btn-group--}}{{---vertical--}}{{--">
+                            <a href="/home/form" class="btn btn-success btn-lg" role="button"><i class="fas fa-plus-square"></i></a>
+                            <br>
+                            <a href="/home/posts" class="btn btn-warning btn-lg" role="button"><i class="fas fa-pencil-alt"></i></a>
+                            <br>
+                            <a href="/home/posts" class="btn btn-danger btn-lg" role="button"><i class="fas fa-trash-alt"></i></a>
+                        </div>--}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->

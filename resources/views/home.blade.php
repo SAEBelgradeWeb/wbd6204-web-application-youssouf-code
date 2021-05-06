@@ -9,7 +9,7 @@ THIS IS THE DASHBOARD
         THE ORIGINAL DASHBOARD CARD
 --}}
 
-{{--<div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -23,36 +23,54 @@ THIS IS THE DASHBOARD
                     @endif
 
                     {{ __('You are logged in!') }}
+                        <br>
+                        {{ __('Now you can create an ad, edit it and delete it when ever you feel like!') }}
                 </div>
+
+                    <div class="{{--col-md-6--}}row justify-content-center">
+                        {{--<h3>Edit your ad's</h3>--}}
+                        <div class="btn-group{{---vertical--}}">
+                            <a href="/home/form" class="btn btn-success btn-lg" role="button"><i class="fas fa-plus-square"></i></a>
+                            <br>
+                            <a href="/home/posts" class="btn btn-warning btn-lg" role="button"><i class="fas fa-pencil-alt"></i></a>
+                            <br>
+                            <a href="/home/posts" class="btn btn-danger btn-lg" role="button"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                <br>
             </div>
         </div>
     </div>
-</div>--}}
+</div>
 
 {{--
         END OF THE ORIGINAL DASHBOARD CARD
 --}}
 
-<div class="container">
+<div class="container bg-muted">
 
-    <div class="row justify-content-center">
-        <div {{--class="col-md-1"--}}>
+    {{--<div class="row justify-content-center">
+        --}}{{--<h3>Edit your ad's</h3>--}}{{--
+        <div class="col-md-6 justify-content-center">
             <h3>Edit your ad's</h3>
-            <div class="btn-group{{---vertical--}}">
+            <div class="btn-group--}}{{---vertical--}}{{--">
                 <a href="/home/form" class="btn btn-success btn-lg" role="button"><i class="fas fa-plus-square"></i></a>
                 <br>
-                <a href="#" class="btn btn-warning btn-lg" role="button"><i class="fas fa-pencil-alt"></i></a>
+                <a href="/home/posts" class="btn btn-warning btn-lg" role="button"><i class="fas fa-pencil-alt"></i></a>
                 <br>
-                <a href="#" class="btn btn-danger btn-lg" role="button"><i class="fas fa-trash-alt"></i></a>
+                <a href="/home/posts" class="btn btn-danger btn-lg" role="button"><i class="fas fa-trash-alt"></i></a>
             </div>
         </div>
 
+    </div>--}}
 
-       {{-- <div class="col-md-11 bg-info">
-            @include('partials.ad_form')
 
-        </div>--}}
-    </div>
+
+
+{{--            @include('posts_auth')--}}
+
+
+
 
 </div>
 @endsection
