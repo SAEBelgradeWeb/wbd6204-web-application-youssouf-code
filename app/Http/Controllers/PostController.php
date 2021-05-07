@@ -42,7 +42,7 @@ class PostController extends Controller
     public function indexVehicles($id)
     {
         $vehicle = Vehicle::find($id);
-        $posts = $vehicle->posts;
+        $posts = $vehicle->posts()->orderBy('created_at','desc')->get();
         return view('posts',compact('posts'));
     }
 /*$post  = Post::where(‘vehicle’, ‘car’)->get();*/
@@ -91,13 +91,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
 /*        dd($request->all());*/
-
-
         $post = Post::create($request->except(['features']));
-        $post->features()->sync($request->feature,);
+        $post->features()->sync($request->feature);
 
         return redirect('/');
     }
+
     public function index_auth()
     {
        /* $user = User::find($id)->first();
@@ -110,10 +109,38 @@ class PostController extends Controller
         return view('posts_auth', compact('posts'));
     }
 
+    public function edit($id)
+    {
+        $post = Post::find($id);
+
+        $user = Auth::user();
+        $vehicles = Vehicle::all();
+        $makes = Make::all();
+        $types = Type::all();
+        $conditions = ['new', 'used','like new'];
+        $shapes = Shape::all();
+        $transmissions = ['Automatic', 'Manual', 'Semi-automatic', 'CVT'];
+        $fuels = ['Diesel', 'Electric', 'Ethanol', 'Gasoline', 'hybrid', 'Lpg autogas'];
+        $drive_types = ['AWD', 'FWD','RWD', '4WD'];
+        $doors = ['2', '3','5','7'];
+        $regions = Region::all();
+        $features = Feature::all();
+
+
+        return view('form_edit', compact('post','user','vehicles','makes','types',
+            'conditions','shapes','transmissions','fuels','drive_types','doors','regions','features'));
+    }
+
+    public function update($id, Request $request)
+    {
+        dd($request->all());
+/*        $post = Post::find($id);*/
+    }
+    
+    
+/*    this should be updated */
     public function delete($id)
     {
-
-
         Post::destroy($id);
         return redirect('/home/posts');
     }

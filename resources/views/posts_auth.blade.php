@@ -20,7 +20,7 @@
 
                     </div>
                     <div class="btn-group m-4{{---vertical--}}">
-                        <a href="#" class="btn btn-warning btn-lg " role="button"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/home/posts/{{$post->id}}/formEdit" class="btn btn-warning btn-lg " role="button"><i class="fas fa-pencil-alt"></i></a>
 
                         <br>
                         <a href="/home/posts/{{$post->id}}" class="btn btn-danger btn-lg" {{--role="button"--}}><i class="fas fa-trash-alt"></i></a>

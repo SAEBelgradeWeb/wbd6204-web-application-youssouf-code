@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 });*/
 Route::get('/try', function () {
-    return view('posts_auth');
+    return view('form_edit');
 });
 
 
@@ -45,7 +45,12 @@ Route::get('/home/form', [\App\Http\Controllers\PostController::class, 'create']
 
 Route::post('/', [\App\Http\Controllers\PostController::class, 'store']);
 
+
 Route::get('/home/posts', [App\Http\Controllers\PostController::class, 'index_auth'])->name('home')/*->middleware('auth')*/;
+
+Route::get('/home/posts/{id}/formEdit', [\App\Http\Controllers\PostController::class, 'edit']);
+Route::put('/home/posts/{id}/formEdit', [\App\Http\Controllers\PostController::class, 'update']);
+
 
 Route::get('/home/posts/{id}', [App\Http\Controllers\PostController::class, 'delete'])/*->middleware('auth')*/;
 

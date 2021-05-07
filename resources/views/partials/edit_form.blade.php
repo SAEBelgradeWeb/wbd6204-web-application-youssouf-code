@@ -1,6 +1,5 @@
-                        {{--THIS FORM IS TO CREATE A NEW AD (POST)--}}
 
-<form class="px-4" action="/" method="post">
+<form class="px-4" action="/home/posts/{id}" method="put">
     <br>
     @csrf
     {{--<h4>Your Name:{{$user->name}} {{$user->last_name}}</h4>
@@ -13,19 +12,22 @@
     <h1>Build Your Ad</h1>
     <div class="row">
         <label for="title">Title:</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Add Title For The Ad ">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Add Title For The Ad" value="{{$post->title}}">
     </div>
 
     <hr>
 
     <h3>Car Details</h3>
-    <div class="row justify-content-center" style="background-color:lightsteelblue">
+    <div class="row justify-content-center" style="background-color:goldenrod">
         <div class="form-group m-2">
             <label for="vehicle_id">Vehicle:</label>
             <select name="vehicle_id" id="vehicle_id" class="form-control">
-             @foreach($vehicles as $vehicle)
-                <option value="{{$vehicle->id}}">{{$vehicle->vehicle}}</option>
-             @endforeach
+                @foreach($vehicles as $vehicle)
+{{--                    @if($vehicle->id === $post->vehicle->id) selected @endif--}}
+                    <option value="{{$vehicle->id}}" @if($vehicle->id === $post->vehicle->id) selected @endif>
+                        {{$vehicle->vehicle}}
+                    </option>
+                @endforeach
             </select>
         </div>
         {{--<div class="form-group m-2">
@@ -36,7 +38,9 @@
             <label for="make_id">Make:</label>
             <select name="make_id" id="make_id" class="form-control">
                 @foreach($makes as $make)
-                    <option value="{{$make->id}}">{{$make->make}}</option>
+                    <option value="{{$make->id}}" @if($make->id === $post->make->id) selected @endif>
+                        {{$make->make}}
+                    </option>
                 @endforeach
             </select>
         </div>
@@ -48,7 +52,7 @@
             <label for="type_id">Model:</label>
             <select name="type_id" id="type_id" class="form-control">
                 @foreach($types as $type)
-                    <option value="{{$type->id}}">{{$type->type}}</option>
+                    <option value="{{$type->id}}" @if($type->id === $post->type->id) selected @endif>{{$type->type}}</option>
                 @endforeach
             </select>
         </div>
@@ -57,32 +61,36 @@
             <label for="condition">Condition:</label>
             <select name="condition" id="condition" class="form-control">
                 @foreach($conditions as $condition)
-                    <option value="{{$condition}}">{{$condition}}</option>
+                    <option value="{{$condition}}" @if($condition === $post->condition) selected @endif>
+                        {{$condition}}
+                    </option>
                 @endforeach
             </select>
         </div>
         <div class="form-group m-2">
             <label for="year">Year:</label>
-            <input type="text" class="form-control" id="year" name="year" placeholder="">
+            <input type="text" class="form-control" id="year" name="year" placeholder="" value="{{$post->year}}">
         </div>
     </div>
 
     <div class="row py-4 justify-content-between">
-       {{-- <div class="form-group">
-            <label for="shape" class="mr-4"><i class="fas fa-car-side mr-2"></i>Body:</label>
-            <input type="text" class="form-control" id="shape" name="shape_id" placeholder="Body">
-        </div>--}}
+        {{-- <div class="form-group">
+             <label for="shape" class="mr-4"><i class="fas fa-car-side mr-2"></i>Body:</label>
+             <input type="text" class="form-control" id="shape" name="shape_id" placeholder="Body">
+         </div>--}}
         <div class="form-group">
             <label for="shape" class="mr-4"><i class="fas fa-car-side mr-2"></i>Body:</label>
             <select name="shape_id" id="shape" class="form-control">
                 @foreach($shapes as $shape)
-                    <option value="{{$shape->id}}">{{$shape->shape}}</option>
+                    <option value="{{$shape->id}}" @if($shape->id === $post->shape->id) selected @endif>
+                        {{$shape->shape}}
+                    </option>
                 @endforeach
             </select>
         </div>
         <div class="form-group">
             <label for="mileage" class=""><i class="fas fa-road mr-2"></i>Mileage:</label>
-            <input type="text" class="form-control" id="mileage" name="mileage" placeholder="mileage">
+            <input type="text" class="form-control" id="mileage" name="mileage" placeholder="mileage" value="{{$post->mileage}}">
         </div>
         {{--<div class="form-group">
             <label for="transmission" class="mr-4"><i class="fas fa-cogs mr-2"></i>Gear Box:</label>
@@ -90,39 +98,46 @@
         </div>--}}
         <div>
             <label for="transmission" class="mr-4"><i class="fas fa-cogs mr-2"></i>Gear Box:</label>
-            <select name="transmission" id="transmission" class="form-control">
+            <select name="fuel" id="fuel" class="form-control">
                 @foreach($transmissions as $transmission)
-                    <option value="{{$transmission}}">{{$transmission}}</option>
+                    <option value="{{$transmission}}" @if($transmission === $post->transmission) selected @endif>
+                        {{$transmission}}
+                    </option>
                 @endforeach
             </select>
         </div>
-
         <div class="form-group">
             <label for="power" class="mr-4"><i class="fas fa-horse mr-2"></i>Power:</label>
-            <input type="text" class="form-control" id="power" name="power" placeholder="Power">
+            <input type="text" class="form-control" id="power" name="power" placeholder="Power" value="{{$post->power}}">
         </div>
 
         <div>
             <label for="fuel" class="mr-4"><i class="fas fa-gas-pump mr-2"></i>Fuel:</label>
             <select name="fuel" id="fuel" class="form-control">
                 @foreach($fuels as $fuel)
-                    <option value="{{$fuel}}">{{$fuel}}</option>
+                    <option value="{{$fuel}}" @if($fuel === $post->fuel) selected @endif>
+                        {{$fuel}}
+                    </option>
                 @endforeach
             </select>
         </div>
         <div>
             <label for="drive_type" class="mr-4"><i class="fab fa-accessible-icon mr-2"></i>Drive Type:</label>
             <select name="drive_type" id="drive_type" class="form-control">
-            @foreach($drive_types as $drive_type)
-                <option value="{{$drive_type}}">{{$drive_type}}</option>
-            @endforeach
-        </select>
+                @foreach($drive_types as $drive_type)
+                    <option value="{{$drive_type}}" @if($drive_type === $post->drive_type) selected @endif>
+                        {{$drive_type}}
+                    </option>
+                @endforeach
+            </select>
         </div>
         <div>
             <label for="door" class="mr-4"><i class="fas fa-door-open mr-2"></i>Door:</label>
             <select name="door" id="door" class="form-control">
                 @foreach($doors as $door)
-                    <option value="{{$door}}">{{$door}}</option>
+                    <option value="{{$door}}" @if($door === $post->door) selected @endif>
+                        {{$door}}
+                    </option>
                 @endforeach
             </select>
         </div>
@@ -134,13 +149,15 @@
             <label for="region" class="mr-4"><i class="fas fa-map-marker-alt mr-2"></i>Region:</label>
             <select name="region_id" id="region" class="form-control">
                 @foreach($regions as $region)
-                    <option value="{{$region->id}}">{{$region->region}}</option>
+                    <option value="{{$region->id}}" @if($region->id === $post->region->id) selected @endif>
+                        {{$region->region}}
+                    </option>
                 @endforeach
             </select>
         </div>
         <div class="form-group">
             <label for="price" class="mr-4"><i class="fas fa-hand-holding-usd mr-2"></i>Price:</label>
-            <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+            <input type="text" class="form-control" id="price" name="price" placeholder="Price" value="{{$post->price}}">
         </div>
     </div>
 
@@ -150,12 +167,12 @@
 
     <div class="row">
         @foreach($features as $feature)
-        <div class="col-6 col-md-3 mt-2 ">
+            <div class="col-6 col-md-3 mt-2 ">
                 <div class="form-check form-check-inline mr-4 pr-4">
                     <input class="form-check-input" type="checkbox" id="{{$feature}}" name="feature[]" value="{{$feature->id}}">
                     <label class="form-check-label" for="{{$feature}}">{{$feature->feature}}</label>
                 </div>
-        </div>
+            </div>
         @endforeach
     </div>
 
@@ -164,7 +181,7 @@
     <h3>Enter Seller's description</h3>
     <div class="form-group">
         <label for="description"></label>
-        <textarea class="form-control" name="description" placeholder="Leave a comment here" id="description" style="height: 100px"></textarea>
+        <textarea class="form-control" name="description" placeholder="Leave a comment here" id="description" style="height: 100px">{{$post->description}}</textarea>
     </div>
 
     <hr>
@@ -196,6 +213,6 @@
 
     <hr>
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
     <br>
 </form>

@@ -48,7 +48,6 @@ class Post extends Model
     }
     public function features()
     {
-
         return $this->belongsToMany(Feature::class);
     }
 }
