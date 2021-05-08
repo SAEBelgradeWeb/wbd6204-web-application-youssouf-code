@@ -1,5 +1,6 @@
 
-<form class="px-4" action="/home/posts/{id}" method="put">
+<form class="px-4" action="/{{$post->id}}" method="post">
+    <input type="hidden" name="_method" value="put">
     <br>
     @csrf
     {{--<h4>Your Name:{{$user->name}} {{$user->last_name}}</h4>
@@ -213,6 +214,6 @@
 
     <hr>
 
-    <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+    <button type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
     <br>
 </form>

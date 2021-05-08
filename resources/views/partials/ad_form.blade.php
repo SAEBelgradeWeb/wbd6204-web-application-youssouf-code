@@ -19,7 +19,7 @@
     <hr>
 
     <h3>Car Details</h3>
-    <div class="row justify-content-center" style="background-color:lightsteelblue">
+    <div class="row justify-content-center" style="background-color:lightgreen">
         <div class="form-group m-2">
             <label for="vehicle_id">Vehicle:</label>
             <select name="vehicle_id" id="vehicle_id" class="form-control">
@@ -196,6 +196,6 @@
 
     <hr>
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    <button type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
     <br>
 </form>

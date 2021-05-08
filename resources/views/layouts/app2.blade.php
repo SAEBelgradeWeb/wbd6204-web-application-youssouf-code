@@ -22,75 +22,10 @@
 </head>
 <body class="antialiased">
 
-{{--LOGIN_REGISTER_ORIGINAL--}}
-
-{{--<div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-@if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-        @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-            @endif
-        @endauth
-    </div>
-@endif
-</div>--}}
-<!-- THE END OF THE ORIGINAL NAV BAR -->
-
-<!-- NAV WITHOUT UL/LI -->
-
-<!-- Image and text -->
-{{-- <nav class="navbar navbar-light bg-light">
-     <a class="navbar-brand" href="#">
-         <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-         Bootstrap
-     </a>
-     <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-         @if (Route::has('login'))
-             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                 @auth
-                     <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Dash bored</a>
-                 @else
-                     <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                     @if (Route::has('register'))
-                         <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                     @endif
-                 @endauth
-             </div>
-         @endif
-     </div>
- </nav>--}}
-<!--THE END OF NAV WITHOUT UL/LI -->
-
-
-
-
-
-{{--<div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-@if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-        @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-            @endif
-        @endauth
-    </div>
-@endif
-</div>--}}
 
 
 
 @include('partials.nav')
-
 
 
 <main class="py-4">

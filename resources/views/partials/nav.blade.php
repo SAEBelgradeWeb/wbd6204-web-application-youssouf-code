@@ -7,20 +7,7 @@
     <button class="navbar-toggler ml-auto p-2" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-{{--    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
-        <ul class="navbar-nav mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Car <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Truck</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-    </div>--}}
+    
     <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
